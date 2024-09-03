@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Filtro 3D con Three.js y AR.js</title>
+    <!-- Solo incluir A-Frame y AR.js, no Three.js directamente -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/1.7.6/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Marcador tipo Hiro para detección -->
+        <a-marker preset="hiro">
+            <!-- Modelo 3D cargado sobre el marcador -->
+            <a-entity id="modelo3d"
+                      position="0 0 0"
+                      rotation="0 0 0"
+                      scale="1 1 1"
+                      gltf-model="Lentes.glb">
+            </a-entity>
+        </a-marker>
+        <!-- Cámara AR -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
